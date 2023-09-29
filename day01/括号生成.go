@@ -11,6 +11,7 @@ func generateParenthesis(n int) []string {
 }
 
 func dfs(leftBranch int, rightBranch int, str string, n int, res *[]string) {
+	fmt.Println("leftBranch=>", leftBranch, "  rightBranch=>", rightBranch, str, n)
 	if len(str) == 2*n {
 		// 如果长度匹配则不用继续寻找直接放进数组中\
 		*res = append(*res, str)
@@ -26,8 +27,4 @@ func dfs(leftBranch int, rightBranch int, str string, n int, res *[]string) {
 	if leftBranch < rightBranch {
 		dfs(leftBranch, rightBranch-1, str+")", n, res)
 	}
-}
-
-func main() {
-	fmt.Println("generateParenthesis(3)", generateParenthesis(3))
 }
